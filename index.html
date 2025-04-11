@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saint Anthony Maria Pucci Duduza</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Georgia&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #f8f8f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+            font-family: 'Merriweather', serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .welcome-message {
+            text-align: center;
+            font-size: 1.8em;
+            margin: 40px 0;
+            color: #2c3e50;
+            font-family: 'Merriweather', serif;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .welcome-message::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: #e67e22;
+            margin: 20px auto;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            font-size: 2em;
+            margin-bottom: 20px;
+            font-family: 'Merriweather', serif;
+            text-align: center;
+            position: relative;
+        }
+
+        .section h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: #e67e22;
+            margin: 10px auto;
+        }
+
+        .button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin: 15px 0;
+            background-color: #e67e22;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .button:hover {
+            background-color: #d35400;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .button i {
+            margin-right: 10px;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 1em;
+        }
+
+        /* Hidden Sections */
+        .hidden-section {
+            display: none;
+            padding: 20px;
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hidden-section h2 {
+            color: #2c3e50;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .hidden-section p {
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        /* Rosary and Divine Mercy Guide Styles */
+        .rosary-guide ol,
+        .divine-mercy-guide ol {
+            margin-left: 20px;
+        }
+
+        .rosary-guide li,
+        .divine-mercy-guide li {
+            margin-bottom: 10px;
+        }
+
+        .rosary-guide h3,
+        .divine-mercy-guide h3 {
+            color: #e67e22;
+            margin-top: 20px;
+        }
+
+        /* Form Styles */
+        form {
+            margin-top: 20px;
+        }
+
+        form label {
+            display: block;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: border 0.3s ease;
+        }
+
+        form input:focus, form textarea:focus {
+            border-color: #e67e22;
+            outline: none;
+        }
+
+        form button {
+            background-color: #e67e22;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+        form button:hover {
+            background-color: #d35400;
+        }
+
+        /* Announcement and Mass Time Lists */
+        #announcement-list p, #mass-time-list p {
+            padding: 10px;
+            background-color: #fff;
+            border-left: 4px solid #e67e22;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .welcome-message {
+                font-size: 1.5em;
+            }
+
+            .section h2 {
+                font-size: 1.8em;
+            }
+
+            .button {
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .welcome-message {
+                font-size: 1.3em;
+            }
+
+            .section h2 {
+                font-size: 1.6em;
+            }
+
+            .button {
+                font-size: 0.9em;
+            }
+        }
+        /* ====== PASTE THIS IN YOUR <style> SECTION ====== */
+
+/* Parish Structure (replaces Staff section) */
+#parish-structure .admin-only-content {
+  background: #f9f9f9;
+  padding: 20px;
+  border-left: 4px solid var(--secondary-color);
+}
+#parish-structure .admin-only-content p {
+  margin-bottom: 15px;
+}
+
+/* Mass and Adoration Times */
+#mass-time-list p {
+  padding: 8px 15px;
+  background: var(--white);
+  border-left: 4px solid var(--secondary-color);
+  margin-bottom: 10px;
+}
+
+/* Policy and Statutes */
+.coming-soon-notice {
+  text-align: center;
+  padding: 30px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px dashed #ddd;
+}
+.coming-soon-notice i {
+  font-size: 2.5em;
+  color: var(--secondary-color);
+  margin-bottom: 15px;
+}
+.coming-soon-notice h3 {
+  color: var(--primary-color);
+  margin: 10px 0;
+}
+
+/* Holy Week Calendar */
+.holy-week {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+}
+.holy-week h3 {
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--secondary-color);
+  padding-bottom: 10px;
+}
+.holy-week ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+.holy-week li {
+  padding: 8px 0;
+  border-bottom: 1px dashed #eee;
+}
+.holy-week li:last-child {
+  border-bottom: none;
+}
+.holy-week strong {
+  color: var(--accent-color);
+  display: inline-block;
+  width: 150px;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Saint Anthony Maria Pucci Duduza</h1>
+    </header>
+    <div class="container">
+        <div class="welcome-message">
+            Welcome to Saint Anthony Maria Pucci Duduza!<br>
+            A place of faith, community, and beautiful singing that resonates across the diocese.<br>
+            Join us in prayer, fellowship, and celebration of God's love.
+        </div>
+        <div class="section">
+  <h2>Church Governance</h2>
+  <a href="#policy-statutes" class="button toggle-section"><i class="fas fa-file-contract"></i> POLICY AND STATUTES</a>
+  <div id="policy-statutes" class="hidden-section">
+    <div class="coming-soon-notice">
+      <i class="fas fa-hourglass-half"></i>
+      <h3>Coming Soon</h3>
+      <p>Pastoral Policy, PPC & PFC Statutes will be available here soon.</p>
+    </div>
+  </div>
+</div>
+        <div class="section">
+            <h2>Prayers</h2>
+            <a href="https://www.universalis.com/" class="button" target="_blank"><i class="fas fa-book-bible"></i> Daily Readings</a>
+            <a href="#rosary" class="button toggle-section"><i class="fas fa-pray"></i> Rosary</a>
+            <div id="rosary" class="hidden-section rosary-guide">
+                <h2>How to Pray the Rosary</h2>
+                <h3>Steps to Pray the Rosary:</h3>
+                <ol>
+                    <li>Make the Sign of the Cross and say the Apostles' Creed.</li>
+                    <li>Say the Our Father.</li>
+                    <li>Say three Hail Marys for faith, hope, and charity.</li>
+                    <li>Say the Glory Be.</li>
+                    <li>Announce the first mystery and say the Our Father.</li>
+                    <li>Say ten Hail Marys while meditating on the mystery.</li>
+                    <li>Say the Glory Be and the Fatima Prayer.</li>
+                    <li>Repeat steps 5-7 for the remaining mysteries.</li>
+                    <li>After the fifth mystery, say the Hail Holy Queen.</li>
+                    <li>End with the Sign of the Cross.</li>
+                </ol>
+                <h3>The Mysteries of the Rosary:</h3>
+                <p><strong>Joyful Mysteries</strong> (Monday & Saturday):<br>
+                    1. The Annunciation<br>
+                    2. The Visitation<br>
+                    3. The Nativity<br>
+                    4. The Presentation<br>
+                    5. The Finding of Jesus in the Temple</p>
+                <p><strong>Sorrowful Mysteries</strong> (Tuesday & Friday):<br>
+                    1. The Agony in the Garden<br>
+                    2. The Scourging at the Pillar<br>
+                    3. The Crowning with Thorns<br>
+                    4. The Carrying of the Cross<br>
+                    5. The Crucifixion</p>
+                <p><strong>Glorious Mysteries</strong> (Wednesday & Sunday):<br>
+                    1. The Resurrection<br>
+                    2. The Ascension<br>
+                    3. The Descent of the Holy Spirit<br>
+                    4. The Assumption<br>
+                    5. The Coronation of Mary</p>
+                <p><strong>Luminous Mysteries</strong> (Thursday):<br>
+                    1. The Baptism of Jesus<br>
+                    2. The Wedding at Cana<br>
+                    3. The Proclamation of the Kingdom<br>
+                    4. The Transfiguration<br>
+                    5. The Institution of the Eucharist</p>
+            </div>
+            <a href="#divine-mercy" class="button toggle-section"><i class="fas fa-hands-praying"></i> Divine Mercy Chaplet</a>
+            <div id="divine-mercy" class="hidden-section divine-mercy-guide">
+                <h2>How to Pray the Divine Mercy Chaplet</h2>
+                <h3>Steps to Pray the Divine Mercy Chaplet:</h3>
+                <ol>
+                    <li>Make the Sign of the Cross.</li>
+                    <li>Say the Our Father.</li>
+                    <li>Say the Hail Mary.</li>
+                    <li>Say the Apostles' Creed.</li>
+                    <li>On the large bead, say: "Eternal Father, I offer You the Body and Blood, Soul and Divinity of Your dearly beloved Son, Our Lord Jesus Christ, in atonement for our sins and those of the whole world."</li>
+                    <li>On the ten small beads, say: "For the sake of His sorrowful Passion, have mercy on us and on the whole world."</li>
+                    <li>Repeat steps 5-6 for each decade (five decades in total).</li>
+                    <li>Conclude with: "Holy God, Holy Mighty One, Holy Immortal One, have mercy on us and on the whole world." (Repeat three times).</li>
+                    <li>End with the Sign of the Cross.</li>
+                </ol>
+                <h3>Praying the Chaplet:</h3>
+                <p>The Divine Mercy Chaplet is typically prayed using rosary beads. It is a powerful prayer for God's mercy and is especially recommended during the Hour of Mercy (3:00 PM).</p>
+            </div>
+            <a href="https://www.praymorenovenas.com/" class="button" target="_blank"><i class="fas fa-praying-hands"></i> Novenas</a>
+            <a href="#saints-prayer" class="button toggle-section"><i class="fas fa-church"></i> Saints' Prayer</a>
+            <div id="saints-prayer" class="hidden-section">
+                <h2>Prayer of St. Anthony Maria Pucci</h2>
+                <p>
+                    O Holy St. Anthony Maria Pucci,<br>
+                    Intercede for us and guide us in our spiritual journey.<br>
+                    Help us to live in faith, hope, and love,<br>
+                    And to serve God with all our hearts.<br>
+                    Amen.
+                </p>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Weekly Updates</h2>
+            <a href="#announcements" class="button toggle-section"><i class="fas fa-bullhorn"></i> Announcements</a>
+            <!-- ▼▼▼ PASTE THIS ▼▼▼ -->
+<div id="announcements" class="hidden-section">
+  <h2>Announcements</h2>
+  
+  <div class="admin-announcements">
+    <!-- EDIT THESE LINES BELOW -->
+    <p><strong>COMING SOON</strong>
+    <!-- EDIT ABOVE ↑↑↑ -->
+  </div>
+  
+  <!-- (This hidden note is only for you - visitors won't see it) -->
+  <!-- 
+    〰〰〰〰〰〰〰〰〰〰〰〰〰〰
+    HOW TO EDIT:
+    1. Change the text between <p>...</p>
+    2. Keep the <strong> dates
+    3. Save the file
+    Last updated: June 1, 2025
+    〰〰〰〰〰〰〰〰〰〰〰〰〰〰
+  -->
+</div>
+<!-- ▲▲▲ END PASTE ▲▲▲ -->
+            <a href="#mass-times" class="button toggle-section"><i class="fas fa-church"></i> Mass and Adoration Time</a>
+<div id="mass-times" class="hidden-section">
+  <h2>Mass and Adoration Time</h2>
+                <div id="mass-time-list">
+  <p>Sunday: 7:30 AM (Mass)</p>
+  <p>Tuesday:10:00 to AM 17:00 PM (Adoration)</p>
+</div>
+            </div>
+            <a href="#event-calendar" class="button toggle-section"><i class="fas fa-calendar-alt"></i> Event Calendar</a>
+            <div id="event-calendar" class="hidden-section">
+  <h2>Event Calendar</h2>
+  
+  <!-- Holy Week 2025 Events -->
+  <div class="holy-week">
+    <h3><i class="fas fa-cross"></i> Holy Week 2025</h3>
+    <ul>
+      <li><strong>Palm Sunday:</strong> April 13</li>
+      <li><strong>Maundy Thursday:</strong> April 17 (Mass of the Lord's Supper)</li>
+      <li><strong>Good Friday:</strong> April 18 (Passion Service)</li>
+      <li><strong>Holy Saturday:</strong> April 19 (Easter Vigil)</li>
+      <li><strong>Easter Sunday:</strong> April 20</li>
+    </ul>
+  </div>
+</div>
+
+<style>
+  .holy-week {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+  }
+  .holy-week h3 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 10px;
+  }
+  .holy-week ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  .holy-week li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+  }
+  .holy-week li:last-child {
+    border-bottom: none;
+  }
+  .holy-week strong {
+    color: var(--accent-color);
+    display: inline-block;
+    width: 150px;
+  }
+</style>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Posters</h2>
+            <a href="#upcoming-events" class="button toggle-section"><i class="fas fa-calendar-check"></i> Upcoming Events</a>
+            <div id="upcoming-events" class="hidden-section">
+                <h2>Upcoming Events</h2>
+                <p>No upcoming events at this time. Please check back later.</p>
+            </div>
+            <a href="#printable-flyers" class="button toggle-section"><i class="fas fa-file-download"></i> Printable Flyers</a>
+            <div id="printable-flyers" class="hidden-section">
+                <h2>Printable Flyers</h2>
+                <p>Currently no flyers available for download.</p>
+            </div>
+        </div>
+        <div class="section">
+            <h2>About Us</h2>
+            <a href="#parish-history" class="button toggle-section"><i class="fas fa-landmark"></i> Parish History</a>
+            <div id="parish-history" class="hidden-section">
+                <h2>Parish History</h2>
+                <p>Saint Anthony Maria Pucci Duduza parish was established in [year]. Our community has grown to become a vibrant center of faith and worship in the Duduza area. We are known for our beautiful liturgical celebrations and active community involvement.</p>
+            </div>
+            <a href="#parish-structure" class="button toggle-section"><i class="fas fa-sitemap"></i> Parish Structure</a>
+
+<div id="parish-structure" class="hidden-section">
+  <h2>Parish Structure</h2>
+  <div class="admin-only-content">
+    <p><strong>Priest:</strong> Rev Fr Basirika Grace</p>
+    
+    <h3>Executive Committee</h3>
+    <ul class="executive-list">
+      <li><strong>Chairperson:</strong> Makubetse Sekhonyane</li>
+      <li><strong>Deputy Chairperson:</strong> Thandi Mthunzi</li>
+      <li><strong>Secretary:</strong> Nompumelelo mbasa</li>
+      <li><strong>Vice secretary:</strong> Motlalepula Selepe</li>
+      <li><strong>Exec Member:</strong> Lindi Magona</li>
+      <li><strong>Exec Member:</strong> Funza Hleza</li>
+    </ul>
+  </div>
+</div>
+
+<style>
+/* Add this CSS to style the list */
+.executive-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.executive-list li {
+  margin-bottom: 10px;
+  padding: 8px 15px;
+  background-color: #fff;
+  border-left: 3px solid var(--secondary-color);
+  box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+}
+
+.executive-list strong {
+  color: var(--primary-color);
+  display: inline-block;
+  width: 160px;
+}
+</style>
+</div>
+            <a href="#contact-us" class="button toggle-section"><i class="fas fa-envelope"></i> Contact Us</a>
+            <div id="contact-us" class="hidden-section">
+                <h2>Contact Us</h2>
+                <p><strong>Address:</strong> 3369 Mofokeng St, Duduza, Nigel, 1494, Nigel, 3369</p>
+                <p><strong>Phone:</strong> 078 064 9326</p>
+                <p><strong>Email:</strong>stanthonymariapucciduduza@gmail.com</p>
+                <p><strong>Office Hours:</strong> Thursday :00 AM - 4:00 PM</p>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Resources</h2>
+            <a href="#resources" class="button toggle-section"><i class="fas fa-book-open"></i> Resources</a>
+            <div id="resources" class="hidden-section">
+                <h2>Resources</h2>
+                <p><strong>Recommended Reading:</strong></p>
+                <ul>
+                    <li>The Bible (RSV-CE or NABRE translations)</li>
+                    <li>Catechism of the Catholic Church</li>
+                    <li>Introduction to the Devout Life by St. Francis de Sales</li>
+                </ul>
+                <p><strong>Online Resources:</strong></p>
+                <ul>
+                    <li><a href="https://www.vatican.va/" target="_blank">The Vatican</a></li>
+                    <li><a href="https://www.usccb.org/" target="_blank">US Conference of Catholic Bishops</a></li>
+                    <li><a href="https://formed.org/" target="_blank">FORMED Catholic Content</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <footer>
+        &copy; 2025 Saint Anthony Maria Pucci Duduza. All rights reserved.
+    </footer>
+
+<script>
+    // Make ALL buttons work (including toggle sections)
+    document.addEventListener('DOMContentLoaded', function() {
+        // Toggle sections when buttons are clicked
+        document.querySelectorAll('.toggle-section').forEach(button => {
+            button.addEventListener('click', function(event) {
+                event.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                
+                // Toggle the section
+                if (targetSection.style.display === 'block') {
+                    targetSection.style.display = 'none';
+                } else {
+                    targetSection.style.display = 'block';
+                    // Smooth scroll to the opened section
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Handle announcement form
+        document.getElementById('announcement-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const announcement = document.getElementById('announcement').value.trim();
+            if (announcement) {
+                const announcementList = document.getElementById('announcement-list');
+                const newAnnouncement = document.createElement('p');
+                newAnnouncement.innerHTML = `<i class="fas fa-bullhorn"></i> ${announcement}`;
+                announcementList.prepend(newAnnouncement);
+                document.getElementById('announcement').value = '';
+            }
+        });
+
+        // Handle mass time form
+        document.getElementById('mass-time-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const massTime = document.getElementById('mass-time').value.trim();
+            if (massTime) {
+                const massTimeList = document.getElementById('mass-time-list');
+                const newMassTime = document.createElement('p');
+                newMassTime.innerHTML = `<i class="fas fa-church"></i> ${massTime}`;
+                massTimeList.prepend(newMassTime);
+                document.getElementById('mass-time').value = '';
+            }
+        });
+
+        // Load sample data
+        const sampleAnnouncements = [
+            "Parish picnic this Sunday after Mass!",
+            "Confessions: Saturdays 3-4 PM",
+            "Bible study every Wednesday 7 PM"
+        ];
+        
+        const announcementList = document.getElementById('announcement-list');
+        sampleAnnouncements.forEach(announcement => {
+            const p = document.createElement('p');
+            p.innerHTML = `<i class="fas fa-bullhorn"></i> ${announcement}`;
+            announcementList.appendChild(p);
+        });
+    });
+</script>
