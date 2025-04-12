@@ -358,6 +358,25 @@
 }
     </style>
 </head>
+<script>
+  // Fix button click issues
+  document.querySelectorAll('.button').forEach(button => {
+    button.style.cursor = 'pointer';
+    button.addEventListener('click', function(e) {
+      if(!this.getAttribute('href')) e.preventDefault();
+    });
+  });
+
+  // Force desktop layout on mobile if needed
+  function fixViewport() {
+    if(window.innerWidth < 768) {
+      document.querySelector('meta[name="viewport"]')
+        .setAttribute('content', 'width=1200, initial-scale=1.0');
+    }
+  }
+  window.addEventListener('resize', fixViewport);
+  fixViewport();
+</script>
 <body>
     <header>
         <h1>Saint Anthony Maria Pucci Duduza</h1>
