@@ -324,7 +324,37 @@
 }
     </style>
 </head>
-<body>
+<script>
+// 100% Working Button Solution
+document.addEventListener('DOMContentLoaded', function() {
+  // Debug: Count how many buttons we find
+  const buttons = document.querySelectorAll('.toggle-section');
+  console.log('Found toggle buttons:', buttons.length);
+  
+  // Make each button work
+  buttons.forEach(button => {
+    button.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      const target = document.querySelector(targetId);
+      
+      if (target) {
+        // Toggle visibility
+        target.style.display = target.style.display === 'block' ? 'none' : 'block';
+        console.log('Toggled:', targetId);
+      } else {
+        console.error('Target not found:', targetId);
+      }
+    });
+  });
+  
+  // Close all sections by default
+  document.querySelectorAll('.hidden-section').forEach(section => {
+    section.style.display = 'none';
+  });
+});
+</script>
+</body>
     <header>
         <h1>Saint Anthony Maria Pucci Duduza</h1>
     </header>
