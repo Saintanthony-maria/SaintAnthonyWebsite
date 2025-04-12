@@ -8,6 +8,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Georgia&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+      /* === Fixes for Layout === */
+/* Consistent button heights */
+.button {
+  min-height: 50px;      /* Prevents uneven buttons */
+  display: flex;
+  align-items: center;   /* Centers icons + text vertically */
+  justify-content: center;
+}
+
+/* Mass times alignment fix */
+#mass-time-list p {
+  padding: 10px 15px;
+  margin: 8px 0;
+}
+
+/* Reduce section spacing */
+.section {
+  margin-bottom: 30px;   /* Was 40px (too much whitespace) */
+}
+
+/* Better mobile spacing */
+@media (max-width: 480px) {
+  .button {
+    padding: 12px 10px;  /* Tighter padding on small screens */
+    font-size: 0.95em;
+  }
+}
         /* General Styles */
         body {
             font-family: 'Georgia', serif;
