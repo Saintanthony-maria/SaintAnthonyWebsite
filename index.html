@@ -586,3 +586,239 @@
                 <p><strong>Online Resources:</strong></p>
                 <ul>
                     <li><a href="https://www.vatican.va/" target="_
+/* ===== CORE FIXES ===== */
+/* 1. Prevent horizontal scrolling */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* 2. Button fixes */
+.button {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  white-space: normal;
+  padding: 14px;
+  margin: 12px 0;
+  text-align: center;
+}
+
+/* 3. Responsive container */
+.container {
+  width: 95%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+/* 4. Desktop layout */
+@media (min-width: 768px) {
+  .section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .hidden-section {
+    padding: 20px;
+  }
+}
+
+/* 5. Mobile tweaks */
+@media (max-width: 480px) {
+  .button {
+    padding: 12px;
+    font-size: 15px;
+  }
+  
+  header {
+    padding: 70px 15px 40px !important;
+  }
+}
+/* ===== BUTTON CENTERING FIX ===== */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* This centers horizontally */
+  max-width: 600px; /* Optimal reading width */
+  margin: 0 auto; /* Center container */
+  padding: 0 15px; /* Prevents edge touching */
+}
+
+.button {
+  width: 100%;
+  max-width: 400px; /* Prevents over-stretching */
+}
+/* ===== SECTION ALIGNMENT FIX ===== */
+.container > .section {
+  width: 100%;
+  max-width: 800px; /* Optimal content width */
+  margin: 0 auto; /* Center the sections */
+  padding: 0 15px; /* Mobile padding */
+  box-sizing: border-box;
+}
+
+/* Fix for specific right-shifted sections */
+#church-governance, 
+#prayers, 
+#weekly-updates {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  float: none !important;
+}
+
+/* Button container refinement */
+.button-container {
+  max-width: 500px; /* Slightly narrower for better focus */
+}
+/* ===== UNIFIED SECTION STYLES ===== */
+.section {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.section h2 {
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--secondary-color);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.section-content {
+  padding: 0 15px;
+}
+
+/* Checklist styling */
+.checklist {
+  list-style: none;
+  padding-left: 0;
+}
+
+.checklist li {
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+}
+
+.checklist i {
+  margin-right: 10px;
+  color: var(--secondary-color);
+  width: 20px;
+}
+/* ===== ABOUT US SECTION ===== */
+#about-us .section-content {
+  display: grid;
+  gap: 25px;
+}
+
+#about-us h3 {
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* Contact Info Styling */
+#about-us p {
+  margin-left: 34px; /* Matches icon width */
+  margin-bottom: 8px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 50px;
+  padding: 20px;
+  background: var(--primary-color);
+  color: white;
+}
+/* ===== GENTLE FIXES ===== */
+/* 1. Fix spacing and alignment */
+.section, .parish-section {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* 2. Consistent headings */
+h1, h2, h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--secondary-color);
+  margin-top: 0.5rem;
+}
+
+/* 3. Button consistency */
+.button, .parish-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem;
+  margin: 1rem 0;
+  background: var(--secondary-color);
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.button:hover, .parish-btn:hover {
+  background: var(--accent-color);
+  transform: translateY(-2px);
+}
+
+/* 4. List items */
+ul:not(.checklist) {
+  padding-left: 1.5rem;
+}
+
+ul:not(.checklist) li {
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+/* 5. Responsive tweaks */
+@media (max-width: 768px) {
+  .section, .parish-section {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.4rem; }
+}
+/* ===== HEADER BACKGROUND ===== */
+header {
+  background: 
+    /* Dark overlay for text readability */
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    /* Saint Anthony image from Wikimedia */
+    url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Antonio_Maria_Pucci.jpg/1200px-Antonio_Maria_Pucci.jpg');
+  
+  background-size: cover;      /* Fills entire header */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat;
+  
+  /* Keep your existing styles below */
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
