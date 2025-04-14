@@ -234,3 +234,52 @@ header {
   padding: 80px 20px;
   text-align: center;
   }
+/* ======================== */
+/* DESKTOP-ONLY ENHANCEMENTS */
+/* Leaves mobile layout untouched */
+/* ======================== */
+
+/* Apply only to screens wider than 992px */
+@media (min-width: 992px) {
+  
+  /* 1. IMPROVE READABILITY */
+  body {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  
+  /* 2. CENTER CONTENT WITH MAX WIDTH */
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* 3. ENHANCE HEADER LAYOUT */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+  }
+  
+  /* 4. BETTER IMAGE DISPLAY */
+  img {
+    max-height: 600px;
+    width: auto;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  /* 5. IMPROVE WHITESPACE */
+  .section {
+    padding: 60px 0;
+  }
+  
+  /* 6. HOVER EFFECTS (Desktop only) */
+  a:hover, button:hover {
+    opacity: 0.9;
+    transition: 0.3s ease;
+  }
+}
