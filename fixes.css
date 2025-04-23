@@ -283,3 +283,62 @@ header {
     transition: 0.3s ease;
   }
 }
+/* Make Event Calendar independent */
+.event-calendar {
+    display: none; /* Hidden by default */
+    /* Add any other styling you need for the calendar */
+}
+
+/* Show calendar when its button is clicked */
+.event-calendar.active {
+    display: block;
+}
+
+/* Posters section styling - independent */
+.posters-section {
+    display: none; /* Hidden by default */
+    /* Add your posters section styling here */
+}
+
+.posters-section.active {
+    display: block;
+}
+
+/* Prayer section styling - independent */
+.prayer-section {
+    display: none; /* Hidden by default */
+    /* Add your prayer section styling here */
+}
+
+.prayer-section.active {
+    display: block;
+}
+
+/* About Us section styling - independent */
+.about-us-section {
+    display: none; /* Hidden by default */
+    /* Add your about us section styling here */
+}
+
+.about-us-section.active {
+    display: block;
+}
+
+/* Contact Us section styling - independent */
+.contact-us-section {
+    display: none; /* Hidden by default */
+    /* Add your contact us section styling here */
+}
+
+.contact-us-section.active {
+    display: block;
+}
+
+/* Style for all section buttons to look consistent */
+.section-button {
+    /* Add your button styling here */
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+    /* Add more styles as needed */
+}
