@@ -341,4 +341,60 @@ header {
     margin: 5px;
     cursor: pointer;
     /* Add more styles as needed */
+/* Contact Us Button Responsive Fixes */
+#contact-us-button {
+    /* Basic button styling */
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.3s ease;
+    
+    /* Responsive sizing */
+    width: auto;
+    max-width: 200px;
+    box-sizing: border-box;
+    
+    /* Icon spacing */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Mobile-specific adjustments */
+@media only screen and (max-width: 600px) {
+    #contact-us-button {
+        width: 90%;
+        max-width: none;
+        margin: 0 auto;
+        padding: 14px 16px;
+        font-size: 16px;
+    }
+    
+    #contact-us-button i {
+        font-size: 18px;
+    }
+}
+
+/* Tablet adjustments */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    #contact-us-button {
+        padding: 13px 18px;
+        font-size: 15px;
+    }
+}
+
+/* Hover effects for desktop */
+@media (hover: hover) and (pointer: fine) {
+    #contact-us-button:hover {
+        background-color: var(--secondary-color);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+}
 }
